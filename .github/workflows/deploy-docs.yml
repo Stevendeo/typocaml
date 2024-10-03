@@ -1,0 +1,33 @@
+name: Deploy Documentation
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v3
+
+    - name: Set up OCaml
+      uses: avsm/setup-ocaml@v2
+      with:
+        ocaml-compiler: 4.14.1
+
+    - name: Install dependencies
+      run: |
+        opam install . --deps-only && opam install dune && opam install odoc
+
+    - name: Build the documentation
+      run: |
+        opam exec -- dune build @doc
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: _build/default/_doc/_html/
