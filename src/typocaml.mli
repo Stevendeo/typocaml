@@ -10,8 +10,6 @@
 
 (** The main TypoCaml module. *)
 
-module Log : module type of Log
-
 (** A typocaml map. *)
 type 'a t
 
@@ -60,3 +58,13 @@ val to_list : 'a t -> (string * 'a) list
 val pp :
   pp_data:(Format.formatter -> 'a -> unit) ->
   Format.formatter -> 'a t -> unit
+
+module Log : sig
+
+  (** Enables the log messages of the library *)
+  val enable_debug : unit -> unit
+
+  (** Disables the log messages of the library *)
+  val disable_debug : unit -> unit
+
+end
