@@ -1,0 +1,6 @@
+(library
+  (name typocaml)
+  (public_name typocaml)
+  (wrapped true)
+  (libraries fmt logs)
+)

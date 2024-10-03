@@ -1,0 +1,26 @@
+(**************************************************************************)
+(*                                                                        *)
+(*  Copyright (c) 2024 OCamlPro                                           *)
+(*                                                                        *)
+(*  All rights reserved.                                                  *)
+(*  This file is distributed under the terms of the                       *)
+(*  OCamlPro license.                                                     *)
+(*                                                                        *)
+(**************************************************************************)
+
+let src = Logs.Src.create "typocaml"
+
+module L = (val (Logs.src_log src))
+
+let debug m = Fmt.kstr (fun s -> L.debug (fun p -> p "%s" s)) m
+
+let pp_level_opt ppf = function
+  | None -> ()
+  | Some l -> Fmt.string ppf (Logs.level_to_string l)
+
+let activate_debug () =
+  Logs.set_reporter @@
+  Logs.format_reporter
+    ~dst:Format.std_formatter
+    ();
+  Logs.Src.set_level src (Some Logs.Debug)

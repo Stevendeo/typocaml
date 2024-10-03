@@ -1,0 +1,28 @@
+opam-version: "2.1.5"
+version: "0.1.0"
+synopsis: "The TypoCaml library"
+description: """
+The TypoCaml library provides dictionary helpers for autocompletion and
+automatic spell checking.
+"""
+depends: [
+  "dune" {>= "2.7"}
+  "ocaml" {>= "4.13.0"}
+  "fmt" {>= "0.9.0"}
+  "odoc" {with-doc}
+  "logs" {>= "0.7.0"}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]

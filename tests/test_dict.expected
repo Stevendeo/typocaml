@@ -1,0 +1,46 @@
+| H ->
+  | a ->
+    | b ->
+      | u ->
+        | t -> x
+  | e ->
+    | l -> x
+      | l -> x
+        | o -> x
+      | o -> x
+| T ->
+  | a ->
+    | d ->
+      | a ->
+        | a -> x
+        | h -> x
+--
+| a ->
+  | b ->
+    | u ->
+      | t -> x
+| e ->
+  | l -> x
+    | l -> x
+      | o -> x
+    | o -> x
+--
+| l -> x
+  | l -> x
+    | o -> x
+  | o -> x
+--
+| l -> x
+  | l -> x
+    | o -> x
+  | o -> x
+--
+true
+--
+Hallo(1): x
+--
+Hellww(1): <none>
+--
+Hellww(2): x
+--
+Helol(1): x

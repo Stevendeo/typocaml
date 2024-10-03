@@ -1,0 +1,25 @@
+
+(executable
+ (name test_dict)
+ (modules test_dict)
+ (libraries typocaml) ; add your own library here
+ )
+
+(alias
+ (name buildtest)
+ (deps
+   test_dict.exe
+ )
+)
+
+(rule
+ (with-stdout-to
+  test_dict.output
+  (run %{exe:test_dict.exe})
+ )
+)
+
+(rule
+ (alias runtest)
+ (action
+  (diff test_dict.expected test_dict.output)))
