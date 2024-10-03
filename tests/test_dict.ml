@@ -51,7 +51,7 @@ let ok3 = Typocaml.find_opt ~max_typo:1 "nulal" dict
 
 let ca1 = Typocaml.autocomplete_autocorrect ~max_typo:0 "ca" dict
 let ca2 = Typocaml.autocomplete_autocorrect ~max_typo:1 "ca" dict
-let co1 = let () = Typocaml.Log.activate_debug () in Typocaml.autocomplete_autocorrect ~max_typo:0 "co" dict
+let co1 = Typocaml.autocomplete_autocorrect ~max_typo:0 "co" dict
 
 let () =
   pp dict;
@@ -76,7 +76,7 @@ let () =
   new_pp ();
   Fmt.pf Format.std_formatter "nulal(1): %a@." (pp_opt pp_unit) ok3;
   new_pp ();
-  (* Return all autocompletions of He with 0 & 1 typos *)
+  (* Return all autocompletions of ca with 0 & 1 typos *)
   Fmt.pf Format.std_formatter "ca(0):[@.%a]@." pp_l ca1;
   Fmt.pf Format.std_formatter "ca(1):[@.%a]@." pp_l ca2;
   Fmt.pf Format.std_formatter "co(0):[@.%a]@." pp_l co1;

@@ -1,64 +1,507 @@
-| H ->
+| a ->
+  | b -> x
+  | c ->
+    | c ->
+      | u ->
+        | s ->
+          | a ->
+            | n ->
+              | t ->
+                | i ->
+                  | u ->
+                    | m -> x
+  | d -> x
+    | i ->
+      | p ->
+        | i ->
+          | s ->
+            | c ->
+              | i -> x
+  | l ->
+    | i ->
+      | q ->
+        | u ->
+          | a ->
+            | m -> x
+          | i ->
+            | d -> x
+  | m ->
+    | e ->
+      | t -> x
+  | p ->
+    | e ->
+      | r ->
+        | i ->
+          | a ->
+            | m -> x
+  | r ->
+    | c ->
+      | h ->
+        | i ->
+          | t ->
+            | e ->
+              | c ->
+                | t ->
+                  | o -> x
+  | s ->
+    | p ->
+      | e ->
+        | r ->
+          | n ->
+            | a ->
+              | t ->
+                | u ->
+                  | r -> x
+  | u ->
+    | t -> x
+      | e ->
+        | m -> x
+| b ->
+  | e ->
+    | a ->
+      | t ->
+        | a ->
+          | e -> x
+| c ->
+  | o ->
+    | m ->
+      | m ->
+        | o ->
+          | d ->
+            | i -> x
+    | n ->
+      | s ->
+        | e ->
+          | c ->
+            | t ->
+              | e ->
+                | t ->
+                  | u ->
+                    | r -> x
+          | q ->
+            | u ->
+              | a ->
+                | t ->
+                  | u ->
+                    | r -> x
+              | u ->
+                | n ->
+                  | t ->
+                    | u ->
+                      | r -> x
+    | r ->
+      | p ->
+        | o ->
+          | r ->
+            | i ->
+              | s -> x
+| d ->
+  | i ->
+    | c ->
+      | t ->
+        | a -> x
+  | o ->
+    | l ->
+      | o ->
+        | r -> x
+          | e -> x
+            | m -> x
+              | q ->
+                | u ->
+                  | e -> x
+            | s -> x
+| e ->
+  | a -> x
+    | q ->
+      | u ->
+        | e -> x
+  | i ->
+    | u ->
+      | s -> x
+  | n ->
+    | i ->
+      | m -> x
+  | o ->
+    | s -> x
+  | r ->
+    | r ->
+      | o ->
+        | r -> x
+  | s ->
+    | s ->
+      | e -> x
+    | t -> x
+  | t -> x
+  | u ->
+    | m -> x
+  | x -> x
+    | e ->
+      | r ->
+        | c ->
+          | i ->
+            | t ->
+              | a ->
+                | t ->
+                  | i ->
+                    | o ->
+                      | n ->
+                        | e ->
+                          | m -> x
+    | p ->
+      | l ->
+        | i ->
+          | c ->
+            | a ->
+              | b ->
+                | o -> x
+| f ->
+  | u ->
+    | g ->
+      | i ->
+        | a ->
+          | t -> x
+        | t -> x
+| i ->
+  | l ->
+    | l ->
+      | o -> x
+      | u ->
+        | m -> x
+  | n -> x
+    | c ->
+      | i ->
+        | d ->
+          | u ->
+            | n ->
+              | t -> x
+    | v ->
+      | e ->
+        | n ->
+          | t ->
+            | o ->
+              | r ->
+                | e -> x
+  | p ->
+    | s ->
+      | a -> x
+        | m -> x
+      | u ->
+        | m -> x
+  | s ->
+    | t ->
+      | e -> x
+  | u ->
+    | r ->
+      | e -> x
+| l ->
   | a ->
     | b ->
+      | o ->
+        | r ->
+          | e -> x
+          | i ->
+            | o ->
+              | s ->
+                | a ->
+                  | m -> x
+    | u ->
+      | d ->
+        | a ->
+          | n ->
+            | t ->
+              | i ->
+                | u ->
+                  | m -> x
+| m ->
+  | a ->
+    | g ->
+      | n ->
+        | a ->
+          | m -> x
+        | i -> x
+  | i ->
+    | n ->
+      | i ->
+        | m ->
+          | a -> x
+  | o ->
+    | d ->
+      | i -> x
+    | l ->
+      | e ->
+        | s ->
+          | t ->
+            | i ->
+              | a ->
+                | e -> x
+| n ->
+  | a ->
+    | t ->
       | u ->
-        | t -> x
+        | s -> x
+  | e ->
+    | m ->
+      | o -> x
+    | q ->
+      | u ->
+        | e -> x
+    | s ->
+      | c ->
+        | i ->
+          | u ->
+            | n ->
+              | t -> x
+  | i ->
+    | h ->
+      | i ->
+        | l -> x
+    | s ->
+      | i -> x
+  | o ->
+    | n -> x
+    | s ->
+      | t ->
+        | r ->
+          | u ->
+            | m -> x
+  | u ->
+    | l ->
+      | l ->
+        | a -> x
+    | m ->
+      | q ->
+        | u ->
+          | a ->
+            | m -> x
+| o ->
+  | d ->
+    | i ->
+      | t -> x
+  | m ->
+    | n ->
+      | i ->
+        | s -> x
+| p ->
+  | a ->
+    | r ->
+      | i ->
+        | a ->
+          | t ->
+            | u ->
+              | r -> x
+  | e ->
+    | r ->
+      | s ->
+        | p ->
+          | i ->
+            | c ->
+              | i ->
+                | a ->
+                  | t ->
+                    | i ->
+                      | s -> x
+  | o ->
+    | r ->
+      | r ->
+        | o -> x
+| q ->
+  | u ->
+    | a ->
+      | e -> x
+        | r ->
+          | a ->
+            | t -> x
+      | m -> x
+      | s ->
+        | i -> x
+    | i -> x
+      | a -> x
+      | s -> x
+        | q ->
+          | u ->
+            | a ->
+              | m -> x
+    | o -> x
+| r ->
+  | a ->
+    | t ->
+      | i ->
+        | o ->
+          | n ->
+            | e -> x
+  | e ->
+    | m -> x
+    | p ->
+      | r ->
+        | e ->
+          | h ->
+            | e ->
+              | n ->
+                | d ->
+                  | e ->
+                    | r ->
+                      | i ->
+                        | t -> x
+| s ->
+  | e ->
+    | d -> x
+    | q ->
+      | u ->
+        | i -> x
+  | i ->
+    | t -> x
+  | u ->
+    | n ->
+      | t -> x
+    | s ->
+      | c ->
+        | i ->
+          | p ->
+            | i ->
+              | t -> x
+| t ->
+  | e ->
+    | m ->
+      | p ->
+        | o ->
+          | r ->
+            | a -> x
+  | o ->
+    | t ->
+      | a ->
+        | m -> x
+| u ->
+  | l ->
+    | l ->
+      | a ->
+        | m -> x
+  | n ->
+    | d ->
+      | e -> x
+  | t -> x
+| v ->
   | e ->
     | l -> x
-      | l -> x
-        | o -> x
-      | o -> x
-| T ->
-  | a ->
-    | d ->
+      | i ->
+        | t -> x
+    | n ->
+      | i ->
+        | a ->
+          | m -> x
+    | r ->
+      | i ->
+        | t ->
+          | a ->
+            | t ->
+              | i ->
+                | s -> x
+  | i ->
+    | t ->
       | a ->
-        | a -> x
-        | h -> x
+        | e -> x
+  | o ->
+    | l ->
+      | u ->
+        | p ->
+          | t ->
+            | a ->
+              | s -> x
+              | t ->
+                | e -> x
+                  | m -> x
 --
-| a ->
-  | b ->
+| l ->
+  | l ->
+    | o -> x
     | u ->
-      | t -> x
-| e ->
-  | l -> x
-    | l -> x
-      | o -> x
-    | o -> x
+      | m -> x
+| n -> x
+  | c ->
+    | i ->
+      | d ->
+        | u ->
+          | n ->
+            | t -> x
+  | v ->
+    | e ->
+      | n ->
+        | t ->
+          | o ->
+            | r ->
+              | e -> x
+| p ->
+  | s ->
+    | a -> x
+      | m -> x
+    | u ->
+      | m -> x
+| s ->
+  | t ->
+    | e -> x
+| u ->
+  | r ->
+    | e -> x
 --
-| l -> x
-  | l -> x
-    | o -> x
-  | o -> x
+| s ->
+  | a -> x
+    | m -> x
+  | u ->
+    | m -> x
 --
-| l -> x
-  | l -> x
-    | o -> x
-  | o -> x
+| s ->
+  | a -> x
+    | m -> x
+  | u ->
+    | m -> x
 --
 true
 --
-Hallo(1): x
+voluptatam(1): x
 
 --
-Hellww(1): <none>
+nuwwa(1): <none>
 
 --
-Hellww(2): x
+nuwwa(2): x
 
 --
-Helol(1): x
+nulal(1): x
 
 --
-He(0):[
-Helo(0);
-Hello(0);
-Hell(0);
-Hel(0);
+ca(0):[
 ]
-He(1):[
-Helo(0);
-Hello(0);
-Hell(0);
-Hel(0);
-Habut(1);
+ca(1):[
+corporis(1);
+consequuntur(1);
+consequatur(1);
+consectetur(1);
+commodi(1);
+autem(1);
+aut(1);
+aspernatur(1);
+architecto(1);
+aperiam(1);
+amet(1);
+aliquid(1);
+aliquam(1);
+adipisci(1);
+ad(1);
+accusantium(1);
+ab(1);
+eaque(1);
+laudantium(1);
+laboriosam(1);
+labore(1);
+magni(1);
+magnam(1);
+natus(1);
+pariatur(1);
+ratione(1);
+]
+co(0):[
+corporis(0);
+consequuntur(0);
+consequatur(0);
+consectetur(0);
+commodi(0);
 ]
