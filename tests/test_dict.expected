@@ -38,9 +38,27 @@
 true
 --
 Hallo(1): x
+
 --
 Hellww(1): <none>
+
 --
 Hellww(2): x
+
 --
 Helol(1): x
+
+--
+He(0):[
+Helo(0);
+Hello(0);
+Hell(0);
+Hel(0);
+]
+He(1):[
+Helo(0);
+Hello(0);
+Hell(0);
+Hel(0);
+Habut(1);
+]

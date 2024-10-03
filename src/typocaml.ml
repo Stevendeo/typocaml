@@ -103,59 +103,63 @@ let get_autocompletions (key : string) (r : 'a t) : 'a t =
 (* Return a list of possible autocompletions. A word badly written can be found if
    there is only [max_typo] typos. *)
 let get_clever_autocompletions ~max_typo (word : string) (r : 'a t) : (string * 'a t * int) list =
-  (* takes a "typo" counter counting typos and returns autocompletions.
+  (* Fixes the word in the zipper [z] and rebuilds the current map to account for already
+     checked words.
      If [inswap] = true, already testing swapping letters so won't try to swap again.
      [z] is the current word represented as a zipper
      [subr] is the current map
-     [acc] is the accumulated list of maps that matches the key word *)
+     [acc] is the accumulated list of maps that matches the key word. *)
   let rec autofix_strategies ~inswap z typo_cpt subr acc =
     (* First strategy: discard the letter *)
     Log.debug "First strategy: discard the letter";
-    let acc = _get acc (typo_cpt + 1) subr (Str_zipper.remove_current_char z) in
+    let subr, acc = _get acc (typo_cpt + 1) subr (Str_zipper.remove_current_char z) in
     (* Second strategy: swap letters *)
     Log.debug "Second strategy: swap letters ";
-    let acc =
+    let subr, acc =
       if inswap then (* No possible swapping *)
         begin
           Log.debug "We already swapped: no swapping";
-          acc
+          subr, acc
         end else
         match Str_zipper.swap ~prefix:false z with
         | exception Str_zipper.Cannot_swap -> (* Impossible to swap *)
           Log.debug "Impossible to swap";
-          acc
+          subr, acc
         | new_zip ->
           _get ~inswap:true acc (typo_cpt + 1) subr new_zip
     in
     (* Third and fourth: checking subtree *)
     M.fold
-      (fun (c' : char) (subr' : 'a t) (acc : (string * 'a t * int) list) ->
+      (fun (c' : char) (subr' : 'a t) ((rebuilt_subr, acc) : 'a t * (string * 'a t * int) list) ->
          (* First possible fix : letter replacement *)
          Log.debug "Begin strategies with %c" c';
-         let acc =
+         let subr', acc =
            if Str_zipper.current_char z = c' then
-             acc
+             subr', acc
            else
              let next_zip = Str_zipper.change_current_char c' z in
              let next_zip = Str_zipper.step next_zip in
-             _get acc (typo_cpt + 1) subr' next_zip
-         in
+             _get acc (typo_cpt + 1) subr' next_zip in
          (* Second possible fix : Missing letter *)
          Log.debug "Begin fourth strategy";
          let next_zip = Str_zipper.add ~prefix:true c' z in
-         let acc = _get acc (typo_cpt + 1) subr' next_zip in
+         let subr', acc = _get acc (typo_cpt + 1) subr' next_zip in
          Log.debug "End strategies with %c" c';
-         acc
+         {rebuilt_subr with children = M.add c' subr' rebuilt_subr.children}, acc
       )
       subr.children
-      acc
-  and  _get ?(inswap=false) subrs_acc typo_cpt subr str_zipper
-    : (string * 'a t * int) list =
+      (empty, acc)
+  and  _get ?(inswap=false)
+      (subrs_acc : (string * 'a t * int) list)
+      typo_cpt
+      subr
+      str_zipper
+    : 'a t * ((string * 'a t * int) list) =
     Log.debug "Current word: %a -- %i typos" Str_zipper.pp str_zipper typo_cpt;
     Log.debug "Current tree:@. %a" pp_no_data subr;
     if typo_cpt > max_typo then begin
       Log.debug "Reached the max number of typos, giving up";
-      subrs_acc
+      subr, subrs_acc
     end else if Str_zipper.can_step str_zipper then begin
       Log.debug "Step forward";
       let curr_char = Str_zipper.current_char str_zipper in
@@ -165,18 +169,19 @@ let get_clever_autocompletions ~max_typo (word : string) (r : 'a t) : (string * 
           curr_char pp_no_data subr;
         autofix_strategies ~inswap str_zipper typo_cpt subr subrs_acc
       | Some map -> (* There is a corresponding word. *)
-        let some_words = _get subrs_acc typo_cpt map (Str_zipper.step str_zipper) in
+        let subr', some_words = _get subrs_acc typo_cpt map (Str_zipper.step str_zipper) in
+        let subr = {subr with children = M.add curr_char subr' subr.children} in
         autofix_strategies ~inswap str_zipper typo_cpt subr some_words
     end else begin
       let str = Str_zipper.to_string str_zipper in
       Log.debug "Reached the end of the zipper %s, returning the tree@. %a"
         str pp_no_data subr
       ;
-      (str, subr, typo_cpt) :: subrs_acc
+      (empty, ((str, subr, typo_cpt) :: subrs_acc))
     end
   in
   Log.debug "Start search for %s" word;
-  let res = _get [] 0 r (Str_zipper.of_string word) in
+  let _,res = _get [] 0 r (Str_zipper.of_string word) in
   Log.debug "End search.";
   res
 
