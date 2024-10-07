@@ -8,7 +8,10 @@
 (*                                                                        *)
 (**************************************************************************)
 
-let src = Logs.Src.create "typocaml"
+let src =
+  let s = Logs.Src.create "typocaml" in
+  Logs.Src.set_level s None;
+  s
 
 module L = (val (Logs.src_log src))
 
